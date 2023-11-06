@@ -1,0 +1,30 @@
+TestOrderId,2241,
+TestName,(F.L.),
+MeasurementName,Measure005,
+TestConditionName,Test Cond,
+TestConditionShortName,TC Short Name,
+Image,,
+MeasurementCategory,1DMatrix,
+Submatrix_Name,1D_SubMat,
+Measurement_MimeType,application/x-asam.aomeasurement.generic1d,
+MeasurementType,Cut by Section,
+URL,https://www.google.com/,
+URL_Description,Web URL,
+Zaxis_ChannelName,z-Axis,
+Zaxis_Unit,ms,
+MeasurementQuantity,,
+Ch013,Ch014,Ch015
+Unit,,
+rpm,%,-
+LocalColumn,,
+1,6506,964
+0,7.1425,-10.1235
+1.40625,7.584098,-11.174798
+2.8125,9.261997,-11.611052
+4.21875,10.302293,-12.752022
+5.625,11.443263,-12.28221
+7.03125,14.866177,-12.28221
+8.4375,17.248793,-12.181537
+9.84375,19.732082,-10.402966
+11.25,21.54421,-11.007009
+12.65625,21.779118,-10.268734
