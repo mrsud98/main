@@ -1,0 +1,37 @@
+package com.crm.qa.testcases;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.HomePage;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class FlightTestCases extends TestBase {
+
+	HomePage homepage;
+
+	public FlightTestCases() {
+		super();
+	}
+
+	@BeforeSuite(alwaysRun = true)
+	public void setUp() {
+		initializaton();
+	//	homepage = new HomePage();
+	}
+
+	@Test(groups = { "Simple", "UI" })
+	public void TC001_CheckifLogoisPresent() {
+		boolean flag = homepage.isLogoDisplayed();
+		Assert.assertTrue(flag);
+		extentTest.log(LogStatus.INFO, "Logo is displayed correctly.");
+	}
+
+	@Test(groups = { "Functionality" })
+	public void TC002_SelectFlightOption() {
+		homepage.selectFlightOption();
+		extentTest.log(LogStatus.INFO, "Flight option selected.");
+	}
+}
