@@ -1,0 +1,44 @@
+package com.iasys.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.iasys.base.TestBase;
+
+public class LoginPage extends TestBase{
+
+	public LoginPage() {
+		PageFactory.initElements(driver, this);
+}
+
+	@FindBy(xpath = "//input[@placeholder='Username']")
+	WebElement userName;
+	
+	@FindBy(xpath="//input[@placeholder='Password']")
+	WebElement password;
+	
+	@FindBy(xpath="//button[@class='btn btn-warning w-100']")
+	WebElement LoginButton;
+	
+	@FindBy(xpath="//img[@alt='Brix']")
+	WebElement BrixLogo;
+	
+	@FindBy(xpath="//button[@class='secondary-button small-link']")
+	WebElement proceed;
+	
+	@FindBy(xpath="//*[@id=\"proceed-link\"]")
+	WebElement link;
+	
+	public void verify_login_with_valid_credentrials()
+	{
+		userName.sendKeys("DG");
+		password.sendKeys("123");
+		LoginButton.click();
+	}
+	
+	public boolean isLogoDisplay() {
+		return BrixLogo.isDisplayed();
+	}
+	
+}

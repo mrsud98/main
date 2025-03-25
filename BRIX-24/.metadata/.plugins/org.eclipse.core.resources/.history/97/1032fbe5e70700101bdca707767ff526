@@ -1,0 +1,64 @@
+package com.iasys.testCases;
+
+import java.time.Duration;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import com.iasys.base.TestBase;
+import com.iasys.pages.ConcurrentLoginPopUp;
+import com.iasys.pages.LoginPage;
+import com.relevantcodes.extentreports.LogStatus;
+
+public class LoginTestCases extends TestBase {
+
+	LoginPage loginpage;
+	ConcurrentLoginPopUp concurrentLoginPopUp;
+	
+	public LoginTestCases() {
+	 super();
+}
+	
+	@BeforeSuite(alwaysRun = true)
+	public void setUp() {
+		initialization();
+		loginpage = new LoginPage();
+	
+	}  
+
+	@Test
+	public void TC_01_loginWithValidcredentials()
+	{
+		loginpage.verify_login_with_valid_credentrials();
+		loginpage.concurrent_login();
+		
+        // Step 4: Assert successful login or perform further actions
+		boolean flag = loginpage.isLogoDisplay();
+		Assert.assertTrue(flag,"Logo is not display");
+		extentTest.log(LogStatus.INFO, "Logo is displayed correctly.");
+		
+	}
+	@Test
+	public void TC_02_loginWithInvalidcredentials() {
+		
+		loginpage.verify_login_with_Invalid_credentrials();
+		boolean flag1 = loginpage.ispopupDisplay();
+		Assert.assertTrue(flag1,"Logo is not display");
+		
+		
+	}
+	
+	
+}
+
+
+
+

@@ -1,0 +1,11 @@
+package com.iasys.pages;
+
+import org.openqa.selenium.*;
+
+import com.iasys.base.TestBase;
+
+public class ConcurrentLoginPopUp extends TestBase  {
+	
+	
+	
+}

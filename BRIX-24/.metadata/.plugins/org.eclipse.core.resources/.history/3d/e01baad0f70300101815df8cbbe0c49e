@@ -1,0 +1,40 @@
+package com.iasys.pages;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+
+import com.iasys.base.TestBase;
+
+public class ConcurrentLoginPopUp extends TestBase {
+    // Locators for the pop-up buttons
+    private By yesButton = By.xpath("//button[normalize-space()='Yes']");
+    
+    @FindBy(xpath = "//button[normalize-space()='Yes']")
+	WebElement Yesbutton;
+
+    private By noButton = By.xpath("//button[normalize-space()='No']");
+    
+    public ConcurrentLoginPopUp() {
+        super();
+    }
+
+    // Click "Yes" button if pop-up appears
+    public void clickYesButton() {
+    	
+       clickElement(yesButton);
+    }
+
+    // Click "No" button if pop-up appears
+    public void clickNoButton() {
+        clickElement(noButton);
+    }
+
+    // Handle pop-up (click either Yes or No based on your scenario)
+    public void handlePopUp() {
+        if (isElementDisplayed(yesButton)) {
+        	clickYesButton();
+        } else if (isElementDisplayed(noButton)) {
+            clickNoButton();
+        }
+    }
+}

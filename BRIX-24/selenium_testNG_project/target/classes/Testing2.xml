@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Suite">
+    <!-- Run testMethod1 -->
+    <test name="Test1" parallel="methods" thread-count="3">
+        <classes>
+            <class name="com.iasys.testCases.LoginTestCases">
+                <methods>
+                    <include name="TC_01_loginWithValidcredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Run testMethod2 -->
+    <test name="Test2">
+        <classes>
+            <class name="com.iasys.testCases.LoginTestCases">
+                <methods>
+                    <include name="TC_02_loginWithInvalidcredentials"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Run testMethod3 -->
+    <test name="Test3">
+        <classes>
+            <class name="com.iasys.testCases.LoginTestCases">
+                <methods>
+                    <include name="TC_03_MultipleWindowHandleTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

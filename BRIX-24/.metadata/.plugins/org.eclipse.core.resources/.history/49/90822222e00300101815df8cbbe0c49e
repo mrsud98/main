@@ -1,0 +1,34 @@
+package com.iasys.pages;
+
+import org.openqa.selenium.*;
+
+import com.iasys.base.TestBase;
+
+public class ConcurrentLoginPopUp extends TestBase {
+    // Locators for the pop-up buttons
+    private By yesButton = By.xpath("//button[@class='brixDialogSave_btn e-flat']");
+    private By noButton = By.xpath("//button[@class='brixDialogClose_btn e-primary e-flat']");
+    
+    public ConcurrentLoginPopUp() {
+        super(driver);
+    }
+
+    // Click "Yes" button if pop-up appears
+    public void clickYesButton() {
+        clickElement(yesButton);
+    }
+
+    // Click "No" button if pop-up appears
+    public void clickNoButton() {
+        clickElement(noButton);
+    }
+
+    // Handle pop-up (click either Yes or No based on your scenario)
+    public void handlePopUp() {
+        if (isElementDisplayed(yesButton)) {
+            clickYesButton();
+        } else if (isElementDisplayed(noButton)) {
+            clickNoButton();
+        }
+    }
+}

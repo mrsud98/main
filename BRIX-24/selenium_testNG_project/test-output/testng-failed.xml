@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Test Suite]">
+  <test thread-count="5" name="Test2(failed)">
+    <classes>
+      <class name="com.iasys.testCases.LoginTestCases">
+        <methods>
+          <include name="endReport"/>
+          <include name="captureResult"/>
+          <include name="setUp"/>
+          <include name="TC_02_loginWithInvalidcredentials"/>
+          <include name="tearDown"/>
+          <include name="startTest"/>
+          <include name="setExtentReport"/>
+        </methods>
+      </class> <!-- com.iasys.testCases.LoginTestCases -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Test Suite] -->
